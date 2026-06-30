@@ -1,0 +1,3 @@
+- draft the roadmap for the next demo milestone
+- review the budget spreadsheet (mock numbers only)
+- send a synthetic status note to the imaginary team

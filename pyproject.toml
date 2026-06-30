@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "personal-mcp-bridge"
+version = "0.1.0"
+description = "Minimal, read-only, allowlisted MCP bridge over local files (alpha)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = ["mcp", "read-only", "allowlist", "local-files", "bridge"]
+dependencies = [
+    "starlette>=0.37",
+    "uvicorn>=0.27",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7",
+    "httpx>=0.27",
+]
+
+[project.scripts]
+personal-mcp-bridge = "personal_mcp_bridge.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
