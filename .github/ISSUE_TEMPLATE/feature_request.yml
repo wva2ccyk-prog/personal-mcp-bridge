@@ -1,0 +1,31 @@
+name: Feature request
+description: Suggest an enhancement that keeps the bridge small, read-only, and auditable.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This project stays intentionally small. Read-only, alias-scoped,
+        fail-closed requests are the best fit. Write access, agents, automation,
+        and persistent state are out of scope. See `ROADMAP.md`.
+  - type: textarea
+    id: access-pattern
+    attributes:
+      label: Access pattern
+      description: What read-only access do you need that the three tools do not cover?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What should the bridge expose, and how would a client call it?
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Boundary check
+      description: Confirm this stays read-only, alias-scoped, and adds no write/agent/persistence behavior.
+    validations:
+      required: false
